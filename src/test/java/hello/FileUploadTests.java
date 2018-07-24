@@ -48,7 +48,8 @@ public class FileUploadTests {
                                 "http://localhost/files/second.txt")));
     }
 
-    @Test
+    @SuppressWarnings("deprecation")
+	@Test
     public void shouldSaveUploadedFile() throws Exception {
         MockMultipartFile multipartFile = new MockMultipartFile("file", "test.txt",
                 "text/plain", "Spring Framework".getBytes());
@@ -59,7 +60,6 @@ public class FileUploadTests {
         then(this.storageService).should().store(multipartFile);
     }
 
-    @SuppressWarnings("unchecked")
     @Test
     public void should404WhenMissingFile() throws Exception {
         given(this.storageService.loadAsResource("test.txt"))
