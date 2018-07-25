@@ -1,0 +1,9 @@
+<h1>${httpErrorCode}</h1>
+<h2>${httpRequestUri}</h2>
+<p>${errorMsg}</p>
+<p>${data}</p>
+
+<p>--------- Exception ---------</p>
+<p>${exception}</p>
+<p><#if exception.detailMessage??>${exception.detailMessage}<#else> - </#if></p>
+<p>--------- End Exception ---------</p>
